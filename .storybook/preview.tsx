@@ -3,6 +3,11 @@ import '@trussworks/react-uswds/lib/uswds.css';
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        order: ['Design Tokens', 'Components'],
+      }
+    },
     controls: {
       matchers: {
        color: /(background|color)$/i,
