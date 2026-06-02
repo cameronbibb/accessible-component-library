@@ -29,6 +29,7 @@ This button component is built on the USWDS button and satisfies the following W
       },
     },
   },
+  tags: ['autodocs'],
   argTypes: {
     variant: {
       control: 'select',

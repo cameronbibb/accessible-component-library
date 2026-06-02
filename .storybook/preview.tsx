@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react-vite'
-import '@trussworks/react-uswds/lib/index.css'
+import '@trussworks/react-uswds/lib/uswds.css';
 
 const preview: Preview = {
   parameters: {
