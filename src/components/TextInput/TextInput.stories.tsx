@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { TextInput } from './TextInput'
+import { Label } from '../Label/Label'
 
 const meta: Meta<typeof TextInput> = {
   title: 'Components/Text Input',
@@ -50,8 +51,14 @@ type Story = StoryObj<typeof TextInput>
 
 export const Default: Story = {
   args: {
-    id: 'text-input',
-    name: 'text-input',
+    id: 'input-type-text',
+    name: 'input-type-text',
     type: 'text',
   },
+  render: (args) => (
+    <div>
+      <Label htmlFor={args.id}>Text input label</Label>
+      <TextInput {...args} />
+    </div>
+  )
 }
