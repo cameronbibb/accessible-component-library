@@ -1,7 +1,7 @@
 import { Label as UswdsLabel, type LabelProps} from "@trussworks/react-uswds";
 
-export const Label = ({children, htmlFor}: LabelProps) => {
+export const Label = ( props : LabelProps) => {
   return (
-    <UswdsLabel children={children} htmlFor={htmlFor}></UswdsLabel>
+    <UswdsLabel {...props} />
   )
 }

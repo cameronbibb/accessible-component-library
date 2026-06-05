@@ -1,13 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { TextInput } from './TextInput'
+import type { TextInputProps } from '@trussworks/react-uswds'
 import { Label } from '../Label/Label'
 
-const meta: Meta<typeof TextInput> = {
+type TextInputStoryArgs = TextInputProps & { label?: string }
+
+const meta: Meta<TextInputStoryArgs> = {
   title: 'Components/Text Input',
   component: TextInput,
-  render: (args) => (
+  render: ({ label, ...args }) => (
     <div>
-      <Label htmlFor={args.id}>Text input label</Label>
+      <Label htmlFor={args.id}>{label}</Label>
       <TextInput {...args} />
     </div>
   ),
@@ -36,28 +39,35 @@ This input box is built on the USWDS input and satisfies the follow WCAG 2.1 AA 
   },
   tags: ['autodocs'],
   argTypes: {
+    label: {
+      control: 'text',
+      description: 'Label text displayed above the input',
+    },
     id: {
+      type: { required: true },
       control: 'text',
       description: 'Unique identifier for the input element',
     },
     name: {
+      type: { required: true },
       control: 'text',
       description: 'Name of the input, used when submitting a form',
     },
     type: {
+      type: { required: true },
       control: 'select',
       options: ['text', 'email', 'number', 'password', 'search', 'tel', 'url'],
       description: 'HTML input type',
     },
   },
-
 }
 
 export default meta
-type Story = StoryObj<typeof TextInput>
+type Story = StoryObj<TextInputStoryArgs>
 
 export const Basic: Story = {
   args: {
+    label: 'Text input label',
     id: 'input-type-text',
     name: 'input-type-text',
     type: 'text',
@@ -67,28 +77,28 @@ export const Basic: Story = {
 export const WithDefaultValue: Story = {
   args: {
     ...Basic.args,
-    defaultValue: "Change me",
+    defaultValue: 'Change me',
   },
 }
 
 export const WithPlaceholder: Story = {
   args: {
     ...Basic.args,
-    placeholder: "Enter value...",
+    placeholder: 'Enter value...',
   },
 }
 
 export const Error: Story = {
   args: {
     ...Basic.args,
-    validationStatus: "error",
+    validationStatus: 'error',
   },
 }
 
 export const Success: Story = {
   args: {
     ...Basic.args,
-    validationStatus: "success",
+    validationStatus: 'success',
   },
 }
 

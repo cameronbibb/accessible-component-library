@@ -27,6 +27,10 @@ This label component is built on the USWDS label and satisfies the following WCA
       control: 'text',
       description: 'Unique identifier for the text input field',
     },
+    children: {
+      control: 'text',
+      description: 'Label text displayed to the user',
+    },
   },
 }
 
@@ -36,5 +40,6 @@ type Story = StoryObj<typeof Label>
 export const Default: Story = {
   args: {
     htmlFor: "input-type-text",
+    children: "Text input label",
   }
 }
