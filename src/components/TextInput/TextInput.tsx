@@ -1,13 +1,7 @@
-import { TextInput as UswdsTextInput } from "@trussworks/react-uswds";
+import { TextInput as UswdsTextInput, type TextInputProps } from "@trussworks/react-uswds";
 
-type TextInputProps = {
-  id: string,
-  name: string,
-  type: 'text' | 'email' | 'number' | 'password' | 'search' | 'tel' | 'url',
-}
-
-export const TextInput = ({ id, name, type }: TextInputProps) => {
+export const TextInput = (props: TextInputProps) => {
   return (
-    <UswdsTextInput id={id} name={name} type={type} />
+    <UswdsTextInput {...props} />
   )
 }

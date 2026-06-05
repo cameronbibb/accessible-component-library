@@ -5,6 +5,12 @@ import { Label } from '../Label/Label'
 const meta: Meta<typeof TextInput> = {
   title: 'Components/Text Input',
   component: TextInput,
+  render: (args) => (
+    <div>
+      <Label htmlFor={args.id}>Text input label</Label>
+      <TextInput {...args} />
+    </div>
+  ),
   parameters: {
     docs: {
       description: {
@@ -44,21 +50,51 @@ This input box is built on the USWDS input and satisfies the follow WCAG 2.1 AA 
       description: 'HTML input type',
     },
   },
+
 }
 
 export default meta
 type Story = StoryObj<typeof TextInput>
 
-export const Default: Story = {
+export const Basic: Story = {
   args: {
     id: 'input-type-text',
     name: 'input-type-text',
     type: 'text',
   },
-  render: (args) => (
-    <div>
-      <Label htmlFor={args.id}>Text input label</Label>
-      <TextInput {...args} />
-    </div>
-  )
+}
+
+export const WithDefaultValue: Story = {
+  args: {
+    ...Basic.args,
+    defaultValue: "Change me",
+  },
+}
+
+export const WithPlaceholder: Story = {
+  args: {
+    ...Basic.args,
+    placeholder: "Enter value...",
+  },
+}
+
+export const Error: Story = {
+  args: {
+    ...Basic.args,
+    validationStatus: "error",
+  },
+}
+
+export const Success: Story = {
+  args: {
+    ...Basic.args,
+    validationStatus: "success",
+  },
+}
+
+export const Readonly: Story = {
+  args: {
+    ...Basic.args,
+    readOnly: true,
+  },
 }
