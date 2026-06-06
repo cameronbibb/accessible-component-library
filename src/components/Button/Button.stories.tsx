@@ -52,6 +52,9 @@ This button component is built on the USWDS button and satisfies the following W
       control: 'text',
       description: 'Button label text — should start with a verb',
     },
+    onClick: {
+      description: 'Click handler',
+    },
   },
 }
 
