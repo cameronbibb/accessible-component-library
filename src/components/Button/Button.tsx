@@ -1,43 +1,52 @@
-import { Button as UswdsButton } from '@trussworks/react-uswds'
+import {
+  Button as UswdsButton,
+  type ButtonProps,
+} from "@trussworks/react-uswds";
 
-type ButtonVariant = 'default' | 'secondary' | 'accent-cool' | 'accent-warm' | 'base' | 'outline'
+type ButtonVariant =
+  | "default"
+  | "secondary"
+  | "accent-cool"
+  | "accent-warm"
+  | "base"
+  | "outline";
 
-type ButtonProps = {
-  label: string
-  variant?: ButtonVariant
-  disabled?: boolean
-  onClick?: () => void
-  big?: boolean
-  unstyled?: boolean
-}
+type CustomButtonProps = {
+  label: string;
+  variant?: ButtonVariant;
+};
+
+type TotalButtonProps = ButtonProps & CustomButtonProps;
 
 export const Button = ({
   label,
   variant,
   disabled = false,
   onClick,
-  big = false,
+  size,
   unstyled = false,
-}: ButtonProps) => {
+}: TotalButtonProps) => {
   return (
     <UswdsButton
       type="button"
-      secondary={variant === 'secondary'}
+      secondary={variant === "secondary"}
       accentStyle={
-        variant === 'accent-cool' ? 'cool' :
-        variant === 'accent-warm' ? 'warm' :
-        undefined
+        variant === "accent-cool"
+          ? "cool"
+          : variant === "accent-warm"
+            ? "warm"
+            : undefined
       }
-      base={variant === 'base'}
-      outline={variant === 'outline'}
+      base={variant === "base"}
+      outline={variant === "outline"}
       disabled={disabled}
       onClick={onClick}
-      big={big}
+      size={size}
       unstyled={unstyled}
     >
       {label}
     </UswdsButton>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

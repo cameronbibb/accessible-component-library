@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Button } from './Button'
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Button } from "./Button";
 
 const meta: Meta<typeof Button> = {
-  title: 'Components/Button',
+  title: "Components/Button",
   component: Button,
   parameters: {
     docs: {
@@ -29,96 +29,106 @@ This button component is built on the USWDS button and satisfies the following W
       },
     },
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     variant: {
-      control: 'select',
-      options: ['default', 'secondary', 'accent-cool', 'accent-warm', 'base', 'outline'],
-      description: 'Visual variant of the button',
+      control: "select",
+      options: [
+        "default",
+        "secondary",
+        "accent-cool",
+        "accent-warm",
+        "base",
+        "outline",
+      ],
+      description: "Visual variant of the button",
     },
     disabled: {
-      control: 'boolean',
-      description: 'Disables the button and communicates unavailability to screen readers',
+      control: "boolean",
+      description:
+        "Disables the button and communicates unavailability to screen readers",
     },
-    big: {
-      control: 'boolean',
-      description: 'Renders a larger button for increased touch target size',
+    size: {
+      control: "radio",
+      options: [undefined, "big"],
+      description: "Renders a larger button for increased touch target size",
     },
     unstyled: {
-      control: 'boolean',
-      description: 'Renders the button without visual styling — appears as a link',
+      control: "boolean",
+      description:
+        "Renders the button without visual styling — appears as a link",
     },
     label: {
-      control: 'text',
-      description: 'Button label text — should start with a verb',
+      control: "text",
+      description: "Button label text — should start with a verb",
     },
     onClick: {
-      description: 'Click handler',
+      description: "Click handler",
     },
   },
-}
+};
 
-export default meta
-type Story = StoryObj<typeof Button>
+export default meta;
+type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
   args: {
-    label: 'Default button',
+    label: "Default button",
   },
-}
+};
 
 export const Secondary: Story = {
   args: {
-    label: 'Secondary button',
-    variant: 'secondary',
+    label: "Secondary button",
+    variant: "secondary",
   },
-}
+};
 
 export const AccentCool: Story = {
   args: {
-    label: 'Accent cool button',
-    variant: 'accent-cool',
+    label: "Accent cool button",
+    variant: "accent-cool",
   },
-}
+};
 
 export const AccentWarm: Story = {
   args: {
-    label: 'Accent warm button',
-    variant: 'accent-warm',
+    label: "Accent warm button",
+    variant: "accent-warm",
   },
-}
+};
 
 export const Base: Story = {
   args: {
-    label: 'Base button',
-    variant: 'base',
+    label: "Base button",
+    variant: "base",
   },
-}
+};
 
 export const Outline: Story = {
   args: {
-    label: 'Outline button',
-    variant: 'outline',
+    label: "Outline button",
+    variant: "outline",
   },
-}
+};
 
 export const Disabled: Story = {
   args: {
-    label: 'Disabled button',
+    label: "Disabled button",
     disabled: true,
   },
-}
+};
 
 export const Big: Story = {
   args: {
-    label: 'Big button',
-    big: true,
+    label: "Big button",
+    size: "big",
   },
-}
+};
 
 export const Unstyled: Story = {
   args: {
-    label: 'Unstyled button',
+    label: "Unstyled button",
     unstyled: true,
   },
-}
+};
