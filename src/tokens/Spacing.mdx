@@ -3,3 +3,210 @@ import { Meta } from "@storybook/addon-docs/blocks";
 <Meta title="Tokens/Spacing" />
 
 # Spacing
+
+USWDS spacing tokens are based on a base-8 scale. The token number corresponds to multiples of 8px, with some half-step values available.
+
+## Spacing Scale
+
+<table>
+  <thead>
+    <tr>
+      <th>Token</th>
+      <th>Value</th>
+      <th>Utility Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0px</td>
+      <td>
+        <code>margin-0</code>, <code>padding-0</code>
+      </td>
+    </tr>
+    <tr>
+      <td>1px</td>
+      <td>1px</td>
+      <td>
+        <code>margin-1px</code>, <code>padding-1px</code>
+      </td>
+    </tr>
+    <tr>
+      <td>2px</td>
+      <td>2px</td>
+      <td>
+        <code>margin-2px</code>, <code>padding-2px</code>
+      </td>
+    </tr>
+    <tr>
+      <td>05</td>
+      <td>4px</td>
+      <td>
+        <code>margin-05</code>, <code>padding-05</code>
+      </td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>8px</td>
+      <td>
+        <code>margin-1</code>, <code>padding-1</code>
+      </td>
+    </tr>
+    <tr>
+      <td>105</td>
+      <td>12px</td>
+      <td>
+        <code>margin-105</code>, <code>padding-105</code>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>16px</td>
+      <td>
+        <code>margin-2</code>, <code>padding-2</code>
+      </td>
+    </tr>
+    <tr>
+      <td>205</td>
+      <td>20px</td>
+      <td>
+        <code>margin-205</code>, <code>padding-205</code>
+      </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>24px</td>
+      <td>
+        <code>margin-3</code>, <code>padding-3</code>
+      </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>32px</td>
+      <td>
+        <code>margin-4</code>, <code>padding-4</code>
+      </td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>40px</td>
+      <td>
+        <code>margin-5</code>, <code>padding-5</code>
+      </td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>48px</td>
+      <td>
+        <code>margin-6</code>, <code>padding-6</code>
+      </td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>56px</td>
+      <td>
+        <code>margin-7</code>, <code>padding-7</code>
+      </td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>64px</td>
+      <td>
+        <code>margin-8</code>, <code>padding-8</code>
+      </td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>72px</td>
+      <td>
+        <code>margin-9</code>, <code>padding-9</code>
+      </td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>80px</td>
+      <td>
+        <code>margin-10</code>, <code>padding-10</code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Visual Examples
+
+### Padding
+
+<div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+  <div
+    className="bg-primary-lighter padding-1"
+    style={{ border: "1px solid #ccc" }}
+  >
+    <code>padding-1</code> — 8px
+  </div>
+  <div
+    className="bg-primary-lighter padding-2"
+    style={{ border: "1px solid #ccc" }}
+  >
+    <code>padding-2</code> — 16px
+  </div>
+  <div
+    className="bg-primary-lighter padding-3"
+    style={{ border: "1px solid #ccc" }}
+  >
+    <code>padding-3</code> — 24px
+  </div>
+  <div
+    className="bg-primary-lighter padding-4"
+    style={{ border: "1px solid #ccc" }}
+  >
+    <code>padding-4</code> — 32px
+  </div>
+  <div
+    className="bg-primary-lighter padding-5"
+    style={{ border: "1px solid #ccc" }}
+  >
+    <code>padding-5</code> — 40px
+  </div>
+  <div
+    className="bg-primary-lighter padding-6"
+    style={{ border: "1px solid #ccc" }}
+  >
+    <code>padding-6</code> — 48px
+  </div>
+</div>
+
+### Margin
+
+<div style={{ display: "flex", flexDirection: "column" }}>
+  <div
+    className="bg-primary-lighter padding-2 margin-bottom-1"
+    style={{ border: "1px solid #ccc" }}
+  >
+    <code>margin-bottom-1</code> — 8px bottom margin
+  </div>
+  <div
+    className="bg-primary-lighter padding-2 margin-bottom-2"
+    style={{ border: "1px solid #ccc" }}
+  >
+    <code>margin-bottom-2</code> — 16px bottom margin
+  </div>
+  <div
+    className="bg-primary-lighter padding-2 margin-bottom-3"
+    style={{ border: "1px solid #ccc" }}
+  >
+    <code>margin-bottom-3</code> — 24px bottom margin
+  </div>
+  <div
+    className="bg-primary-lighter padding-2 margin-bottom-4"
+    style={{ border: "1px solid #ccc" }}
+  >
+    <code>margin-bottom-4</code> — 32px bottom margin
+  </div>
+</div>
+
+## Usage Guidelines
+
+- Use spacing tokens instead of hardcoded pixel values — this ensures consistency across all components
+- Prefer multiples of 2 for most spacing needs — tokens 1 through 6 cover the majority of use cases
+- Use half-step tokens (05, 105, 205) sparingly for fine-tuning only
+- Consistent spacing is a key part of visual rhythm — components and page templates should draw from the same scale

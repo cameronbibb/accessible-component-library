@@ -1,72 +1,152 @@
-# Getting Started
+import { Meta } from "@storybook/addon-docs/blocks";
 
-Welcome! Whether you're a designer or a developer, this guide will help you get started and connect you to the essential resources you need.
+<Meta title="Welcome" />
 
-<br />
-<br />
-<br />
-<br />
-> ## Include the following:
+# Kentucky Personnel Cabinet — Accessible Component Library
 
-> **- How to import the component library and receive updates.**  
-> **- This design system and component library is our source of truth.**
+This component library and design system was developed in response to the Kentucky Personnel Cabinet's Division of Technology Services initiative to modernize legacy web applications and establish a unified, accessible UI standard across all internal tools and public-facing applications.
 
-<br />
-<br />
-<br />
-<br />
-## Table of Contents
-
-- [Design Resources](#design-resources)
-  - [Figma](#figma)
-  - [UI/UX Design Guidelines](#uiux-design-guidelines)
-  - [Design Assets](#design-assets)
-
-- [Development Resources](#development-resources)
-  - [Coding Standards](#coding-standards)
-  - [Version Control](#version-control)
-  - [Development Tools](#development-tools)
+It is built on the [U.S. Web Design System (USWDS)](https://designsystem.digital.gov/) and implements [WCAG 2.1 Level AA](https://www.w3.org/WAI/standards-guidelines/wcag/) accessibility standards, in compliance with the ADA Title II rule effective April 2026 for state and local governments.
 
 ---
 
-## Design Resources
+## Purpose
 
-### Figma
+The Personnel Cabinet currently maintains a portfolio of web applications built independently over time, resulting in visual inconsistency, varied user experiences, and accessibility gaps. This design system addresses those problems by establishing:
 
-[Figma](https://www.figma.com/) is a collaborative design and prototyping tool. It's the heart of the design process, allowing designers to work together seamlessly.
-
-- **Get Access**: If you're not already part of the Figma project, request access from the project lead or manager.
-
-### UI/UX Design Guidelines
-
-Before you dive into designing, familiarize yourself with our UI/UX design guidelines. They provide valuable insights into our design philosophy and standards.
-
-- [UI/UX Guidelines Document](https://your-design-guidelines-link.com)
-
-### Design Assets
-
-All the essential design assets like logos, icons, and brand guidelines can be found in the Figma project. Ensure you have access and familiarize yourself with these assets for consistency.
+- A **single source of truth** for UI components, design tokens, and usage guidelines
+- **WCAG 2.1 AA compliance** built into every component from the ground up
+- A **consistent visual language** across all applications — colors, typography, spacing, and interactive patterns
+- A **reusable component library** that reduces development time and ensures new applications inherit accessibility and consistency by default
 
 ---
 
-## Development Resources
+## How to Use This Library
 
-### Coding Standards
+### Installation
 
-Maintaining a consistent code style is essential for collaborative development. Our coding standards document will guide you on best practices.
+Clone the repository and install dependencies:
 
-- [Coding Standards Document](https://your-coding-standards-link.com)
+```bash
+git clone https://github.com/cameronbibb/accessible-component-library.git
+cd accessible-component-library
+npm install
+```
 
-### Version Control
+### Running Storybook
 
-We use Git for version control. Make sure you have Git installed and are familiar with its basics.
+```bash
+npm run storybook
+```
 
-### Development Tools
+### Importing Components
 
-Your development environment is critical. Here are some tools and resources to help you set up your workspace:
+Import components directly from the `src/components` directory:
 
-- **Code Editor**: We recommend using [Visual Studio Code](https://code.visualstudio.com/) for development. It's highly customizable and supports a wide range of extensions.
-
-- **Package Manager**: [npm](https://www.npmjs.com/) is the package manager we use for JavaScript projects. Install it to manage project dependencies.
+```tsx
+import { Button } from "./components/Button/Button";
+import { TextInput } from "./components/TextInput/TextInput";
+```
 
 ---
+
+## What's Included
+
+<table>
+  <thead>
+    <tr>
+      <th>Section</th>
+      <th>Contents</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Components</td>
+      <td>
+        Button, TextInput, Label, Form, Textarea, Alert — accessible, reusable
+        UI building blocks
+      </td>
+    </tr>
+    <tr>
+      <td>Templates</td>
+      <td>
+        Personnel Feedback Form — a modernized, accessible redesign of an
+        existing Personnel Cabinet form
+      </td>
+    </tr>
+    <tr>
+      <td>Tokens</td>
+      <td>
+        Colors, Typography, Spacing — the foundational design decisions that
+        components are built on
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## Design Principles
+
+**Accessibility first.** Every component is built to WCAG 2.1 AA standards. Accessibility is not a retrofit — it is a requirement built into the foundation.
+
+**Consistency over customization.** Components define the boundaries of the UI. New applications draw from this library rather than making independent design decisions.
+
+**Stability over novelty.** This system is built for long-term maintainability in a government context. Dependencies are chosen for reliability, not trendiness.
+
+**Documentation as a deliverable.** Every component includes usage guidelines, accessibility criteria, and implementation notes. The documentation is as important as the code.
+
+---
+
+## Technology
+
+<table>
+  <thead>
+    <tr>
+      <th>Tool</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>React + TypeScript</td>
+      <td>Component development</td>
+    </tr>
+    <tr>
+      <td>Vite</td>
+      <td>Build tooling</td>
+    </tr>
+    <tr>
+      <td>Storybook</td>
+      <td>Component documentation and development environment</td>
+    </tr>
+    <tr>
+      <td>USWDS via @trussworks/react-uswds</td>
+      <td>Accessible, government-tested UI components</td>
+    </tr>
+    <tr>
+      <td>axe-core via @storybook/addon-a11y</td>
+      <td>Automated WCAG accessibility testing</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## Development Standards
+
+- Components are wrapped in a facade pattern — consuming applications import from this library, not directly from USWDS. This isolates dependency changes to a single location.
+- All components are tested against WCAG 2.1 AA criteria using the Storybook accessibility addon.
+- Color contrast ratios meet or exceed the 4.5:1 minimum for normal text required by WCAG 1.4.3.
+- All interactive elements have visible focus indicators per WCAG 2.4.7.
+- Form inputs use proper label association, ARIA attributes, and error messaging patterns per WCAG 1.3.1 and 3.3.1.
+
+---
+
+## Resources
+
+- [USWDS Documentation](https://designsystem.digital.gov/)
+- [WCAG 2.1 Guidelines](https://www.w3.org/TR/WCAG21/)
+- [ADA Title II Web Accessibility Rule](https://www.federalregister.gov/documents/2026/04/20/2026-07663/extension-of-compliance-dates-for-nondiscrimination-on-the-basis-of-disability-accessibility-of-web)
+- [Truss USWDS React Components](https://trussworks.github.io/react-uswds/)
+- [Storybook Documentation](https://storybook.js.org/docs)

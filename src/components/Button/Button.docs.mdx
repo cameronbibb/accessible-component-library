@@ -1,0 +1,59 @@
+import {
+  Meta,
+  Title,
+  Description,
+  Canvas,
+  Controls,
+  ArgTypes,
+} from "@storybook/addon-docs/blocks";
+import * as ButtonStories from "./Button.stories";
+
+<Meta of={ButtonStories} />
+
+<Title />
+
+## References
+
+- [USWDS Button Component](https://designsystem.digital.gov/components/button/)
+- [Truss Button Component](https://trussworks.github.io/react-uswds/?path=/docs/components-button--docs)
+
+## Accessibility
+
+This button component is built on the USWDS button and satisfies the following WCAG 2.1 AA criteria:
+
+- **1.4.3 Contrast (Minimum)** — All button variants meet a 4.5:1 contrast ratio between text and background color
+- **2.1.1 Keyboard** — All buttons are fully operable via keyboard
+- **2.4.7 Focus Visible** — A visible focus indicator is displayed when the button receives keyboard focus
+- **4.1.2 Name, Role, Value** — Uses a native `<button>` element so role and state are communicated correctly to screen readers
+
+## Usage Guidelines
+
+- Use the **default** variant for the primary action on a page
+- Use **secondary** for secondary actions that appear alongside a primary action
+- Use **outline** for actions that occur on the current page without navigating away
+- Use **accent-cool** or **accent-warm** sparingly for emphasis
+- Keep button labels short and start with a verb — "Save changes", "Submit form", "Cancel"
+- Avoid placing more than one primary button on a page
+
+## Component Preview
+
+<Canvas of={ButtonStories.Default} />
+
+## Controls
+
+<Controls of={ButtonStories.Default} />
+
+## All Variants
+
+<Canvas of={ButtonStories.Secondary} />
+<Canvas of={ButtonStories.AccentCool} />
+<Canvas of={ButtonStories.AccentWarm} />
+<Canvas of={ButtonStories.Base} />
+<Canvas of={ButtonStories.Outline} />
+<Canvas of={ButtonStories.Disabled} />
+<Canvas of={ButtonStories.Big} />
+<Canvas of={ButtonStories.Unstyled} />
+
+## Props
+
+<ArgTypes of={ButtonStories} />

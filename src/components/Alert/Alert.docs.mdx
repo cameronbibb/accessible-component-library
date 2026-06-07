@@ -1,0 +1,57 @@
+import {
+  Meta,
+  Title,
+  Canvas,
+  Controls,
+  ArgTypes,
+} from "@storybook/addon-docs/blocks";
+import * as AlertStories from "./Alert.stories";
+
+<Meta of={AlertStories} />
+
+<Title />
+
+## References
+
+- [USWDS Alert Component](https://designsystem.digital.gov/components/alert/)
+- [Truss Alert Component](https://trussworks.github.io/react-uswds/?path=/docs/components-alert--docs)
+
+## Accessibility
+
+This alert component is built on the USWDS alert and satisfies the following WCAG 2.1 AA criteria:
+
+- **1.3.1 Info and Relationships** — Alert type (success, error, warning, info) is communicated through both color and an icon, not color alone
+- **1.4.3 Contrast (Minimum)** — All alert variants meet a 4.5:1 contrast ratio between text and background color
+- **4.1.3 Status Messages** — Error and warning alerts use `role="alert"` so screen readers announce them automatically without requiring focus
+- **2.4.7 Focus Visible** — Any interactive elements within an alert display a visible focus indicator
+
+## Usage Guidelines
+
+- Use **success** to confirm a completed action — form submission, save confirmed, process complete
+- Use **error** to communicate a failure that requires user action — form validation failure, submission error
+- Use **warning** to communicate a condition the user should be aware of but that does not block action
+- Use **info** to provide neutral contextual information
+- Use the **validation** prop when summarizing multiple form errors at the top of a form — list each error as a link that moves focus to the relevant field
+- Use **slim** for low-priority, space-constrained contexts
+- Never rely on color alone to communicate alert type — the icon reinforces meaning for colorblind users
+- Place error and validation alerts above the content they relate to so screen readers encounter them first
+- Do not use alerts for decorative or purely visual purposes
+
+## Component Preview
+
+<Canvas of={AlertStories.Success} />
+
+## Controls
+
+<Controls of={AlertStories.Success} />
+
+## All Variants
+
+<Canvas of={AlertStories.Warning} />
+<Canvas of={AlertStories.Error} />
+<Canvas of={AlertStories.Info} />
+<Canvas of={AlertStories.Slim} />
+
+## Props
+
+<ArgTypes of={AlertStories} />

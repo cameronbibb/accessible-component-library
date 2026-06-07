@@ -4,13 +4,183 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 <div className="grid-container">
   <h1>Typography</h1>
-  <h2>Headers</h2>
+
+## Type Scale
+
+<table>
+  <thead>
+    <tr>
+      <th>Token</th>
+      <th>Size</th>
+      <th>Utility Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3xs</td>
+      <td>0.73rem / 12px</td>
+      <td>
+        <code>font-sans-3xs</code>
+      </td>
+    </tr>
+    <tr>
+      <td>2xs</td>
+      <td>0.81rem / 13px</td>
+      <td>
+        <code>font-sans-2xs</code>
+      </td>
+    </tr>
+    <tr>
+      <td>xs</td>
+      <td>0.87rem / 14px</td>
+      <td>
+        <code>font-sans-xs</code>
+      </td>
+    </tr>
+    <tr>
+      <td>sm</td>
+      <td>0.93rem / 15px</td>
+      <td>
+        <code>font-sans-sm</code>
+      </td>
+    </tr>
+    <tr>
+      <td>md</td>
+      <td>1rem / 16px</td>
+      <td>
+        <code>font-sans-md</code>
+      </td>
+    </tr>
+    <tr>
+      <td>lg</td>
+      <td>1.25rem / 20px</td>
+      <td>
+        <code>font-sans-lg</code>
+      </td>
+    </tr>
+    <tr>
+      <td>xl</td>
+      <td>1.75rem / 28px</td>
+      <td>
+        <code>font-sans-xl</code>
+      </td>
+    </tr>
+    <tr>
+      <td>2xl</td>
+      <td>2rem / 32px</td>
+      <td>
+        <code>font-sans-2xl</code>
+      </td>
+    </tr>
+    <tr>
+      <td>3xl</td>
+      <td>2.5rem / 40px</td>
+      <td>
+        <code>font-sans-3xl</code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Line Height Scale
+
+<table>
+  <thead>
+    <tr>
+      <th>Token</th>
+      <th>Value</th>
+      <th>Utility Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>
+        <code>line-height-sans-1</code>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>1.15</td>
+      <td>
+        <code>line-height-sans-2</code>
+      </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>1.35</td>
+      <td>
+        <code>line-height-sans-3</code>
+      </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>1.5</td>
+      <td>
+        <code>line-height-sans-4</code>
+      </td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>1.62</td>
+      <td>
+        <code>line-height-sans-5</code>
+      </td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>1.75</td>
+      <td>
+        <code>line-height-sans-6</code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Font Family
+
+<table>
+  <thead>
+    <tr>
+      <th>Token</th>
+      <th>Family</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>font-sans</code>
+      </td>
+      <td>Public Sans</td>
+      <td>Default — body text, labels, UI elements</td>
+    </tr>
+    <tr>
+      <td>
+        <code>font-serif</code>
+      </td>
+      <td>Merriweather</td>
+      <td>Long-form prose, editorial content</td>
+    </tr>
+    <tr>
+      <td>
+        <code>font-mono</code>
+      </td>
+      <td>Roboto Mono</td>
+      <td>Code samples, technical strings</td>
+    </tr>
+  </tbody>
+</table>
+
+## Headers
 
 <h1>Header 1</h1>
 <h2>Header 2</h2>
 <h3>Header 3</h3>
 <h4>Header 4</h4>
-<h2>Body</h2>
+
+## Body
 
 <p>
   Ut voluptatum quia quidem. Et et numquam architecto. Consequuntur enim ex
@@ -18,12 +188,14 @@ import { Meta } from "@storybook/addon-docs/blocks";
   perspiciatis quia laudantium qui. Incidunt ducimus iste eius voluptas qui.
   Commodi dolor nesciunt inventore consequatur quia et.
 </p>
-<h2>Font weight</h2>
+
+## Font Weight
 
 <p className="text-normal">text normal</p>
 <p className="text-semibold">text semibold</p>
 <p className="text-bold">text bold</p>
-<h2>Font style</h2>
+
+## Font Style
 
 <p className="text-italic">text italic</p>
 <p className="text-uppercase">text uppercase</p>
@@ -52,7 +224,8 @@ import { Meta } from "@storybook/addon-docs/blocks";
   after my friend’s friend, Leonidas W. Smiley, as requested to do, and I
   hereunto append the result.
 </p>
-<h2>Line height</h2>
+
+## Line Height
 
 <h3>Line height 1</h3>
 <p className="line-height-sans-1">
@@ -96,7 +269,8 @@ import { Meta } from "@storybook/addon-docs/blocks";
   after my friend’s friend, Leonidas W. Smiley, as requested to do, and I
   hereunto append the result.
 </p>
-<h2>Text color</h2>
+
+## Text Color
 
   <h3>Base</h3>
   <p className="text-base-lightest bg-ink">text base lightest</p>
@@ -106,7 +280,7 @@ import { Meta } from "@storybook/addon-docs/blocks";
   <p className="text-base-dark">text base dark</p>
   <p className="text-base-darker">text base darker</p>
   <p className="text-base-darkest">text base darkest</p>
-  <p className="text-base-ink">text base ink</p>
+  <p className="text-ink">text ink</p>
   <h3>Primary</h3>
   <p className="text-primary-lighter bg-ink">text primary lighter</p>
   <p className="text-primary-light bg-ink">text primary light</p>
@@ -127,8 +301,8 @@ import { Meta } from "@storybook/addon-docs/blocks";
   <p className="text-accent-cool bg-ink">text accent cool</p>
   <p className="text-accent-cool-dark bg-ink">text accent cool dark</p>
   <p className="text-accent-cool-darker">text accent cool darker</p>
-  <p className="text-accent-warm-lighter bg-ink">text accent warm ligher</p>
   <h3>Accent warm</h3>
+  <p className="text-accent-warm-lighter bg-ink">text accent warm lighter</p>
   <p className="text-accent-warm-light bg-ink">text accent warm light</p>
   <p className="text-accent-warm bg-ink">text accent warm</p>
   <p className="text-accent-warm-dark">text accent warm dark</p>
@@ -156,5 +330,5 @@ import { Meta } from "@storybook/addon-docs/blocks";
   <p className="text-success-darker">text success darker</p>
   <p className="text-disabled-light bg-ink">text disabled light</p>
   <p className="text-disabled">text disabled</p>
-  <p className="text-disabled">text disabled</p>
+  <p className="text-disabled-dark">text disabled dark</p>
 </div>
