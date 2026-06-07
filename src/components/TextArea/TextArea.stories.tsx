@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { TextInput } from "./TextInput";
-import { type TextInputProps } from "@trussworks/react-uswds";
+import { Textarea } from "./TextArea";
+import { type TextareaProps } from "@trussworks/react-uswds";
 import { Label } from "../Label/Label";
 
-type TextInputStoryArgs = TextInputProps & { label?: string };
+type TextAreaInputProps = TextareaProps & { label?: string };
 
-const meta: Meta<TextInputStoryArgs> = {
-  title: "Components/Text Input",
-  component: TextInput,
+const meta: Meta<TextAreaInputProps> = {
+  title: "Components/Textarea",
+  component: Textarea,
   render: ({ label, ...args }) => (
     <div>
       <Label htmlFor={args.id}>{label}</Label>
-      <TextInput {...args} />
+      <Textarea {...args} />
     </div>
   ),
   parameters: {
@@ -53,79 +53,30 @@ This input box is built on the USWDS input and satisfies the follow WCAG 2.1 AA 
       control: "text",
       description: "Name of the input, used when submitting a form",
     },
-    type: {
-      type: { name: "string", required: true },
-      control: "select",
-      options: ["text", "email", "number", "password", "search", "tel", "url"],
-      description: "HTML input type",
-    },
     className: {
       control: "text",
       type: { name: "string" },
     },
-    validationStatus: {
-      type: { name: "string" },
-      options: ["error", "success"],
-      control: { type: "radio" },
+    error: {
+      type: { name: "boolean" },
+      control: { type: "boolean" },
     },
-    inputSize: {
-      type: { name: "string" },
-      options: ["small", "medium", "large"],
-      control: { type: "radio" },
+    success: {
+      type: { name: "boolean" },
+      control: { type: "boolean" },
     },
+    children: {},
     inputRef: {},
-    inputProps: {},
   },
 };
 
 export default meta;
-type Story = StoryObj<TextInputStoryArgs>;
+type Story = StoryObj<TextAreaInputProps>;
 
 export const Basic: Story = {
   args: {
     label: "Text input label",
     id: "input-type-text",
-    type: "text",
-  },
-};
-
-export const WithDefaultValue: Story = {
-  args: {
-    ...Basic.args,
-    defaultValue: "Change me",
-  },
-};
-
-export const WithPlaceholder: Story = {
-  args: {
-    ...Basic.args,
-    placeholder: "Enter value...",
-  },
-};
-
-export const Error: Story = {
-  args: {
-    ...Basic.args,
-    validationStatus: "error",
-  },
-  render: ({ label, ...args }) => (
-    <div>
-      <Label htmlFor={args.id}>{label}</Label>
-      <TextInput {...args} />
-    </div>
-  ),
-};
-
-export const Success: Story = {
-  args: {
-    ...Basic.args,
-    validationStatus: "success",
-  },
-};
-
-export const Readonly: Story = {
-  args: {
-    ...Basic.args,
-    readOnly: true,
+    name: "Comments",
   },
 };
