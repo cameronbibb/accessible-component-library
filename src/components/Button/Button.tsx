@@ -12,39 +12,27 @@ type ButtonVariant =
   | "outline";
 
 type CustomButtonProps = {
-  label: string;
   variant?: ButtonVariant;
 };
 
 type TotalButtonProps = ButtonProps & CustomButtonProps;
 
-export const Button = ({
-  label,
-  variant,
-  disabled = false,
-  onClick,
-  size,
-  unstyled = false,
-}: TotalButtonProps) => {
+export const Button = (props: TotalButtonProps) => {
   return (
     <UswdsButton
-      type="button"
-      secondary={variant === "secondary"}
+      secondary={props.variant === "secondary"}
       accentStyle={
-        variant === "accent-cool"
+        props.variant === "accent-cool"
           ? "cool"
-          : variant === "accent-warm"
+          : props.variant === "accent-warm"
             ? "warm"
             : undefined
       }
-      base={variant === "base"}
-      outline={variant === "outline"}
-      disabled={disabled}
-      onClick={onClick}
-      size={size}
-      unstyled={unstyled}
+      base={props.variant === "base"}
+      outline={props.variant === "outline"}
+      {...props}
     >
-      {label}
+      {props.children}
     </UswdsButton>
   );
 };

@@ -4,6 +4,7 @@ import { Button } from "./Button";
 const meta: Meta<typeof Button> = {
   title: "Components/Button",
   component: Button,
+  render: (args) => <Button {...args}>{args.children}</Button>,
   parameters: {
     docs: {
       description: {
@@ -58,7 +59,7 @@ This button component is built on the USWDS button and satisfies the following W
       description:
         "Renders the button without visual styling — appears as a link",
     },
-    label: {
+    children: {
       control: "text",
       description: "Button label text — should start with a verb",
     },
@@ -73,62 +74,62 @@ type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
   args: {
-    label: "Default button",
+    children: "Default button",
   },
 };
 
 export const Secondary: Story = {
   args: {
-    label: "Secondary button",
+    children: "Secondary button",
     variant: "secondary",
   },
 };
 
 export const AccentCool: Story = {
   args: {
-    label: "Accent cool button",
+    children: "Accent cool button",
     variant: "accent-cool",
   },
 };
 
 export const AccentWarm: Story = {
   args: {
-    label: "Accent warm button",
+    children: "Accent warm button",
     variant: "accent-warm",
   },
 };
 
 export const Base: Story = {
   args: {
-    label: "Base button",
+    children: "Base button",
     variant: "base",
   },
 };
 
 export const Outline: Story = {
   args: {
-    label: "Outline button",
+    children: "Outline button",
     variant: "outline",
   },
 };
 
 export const Disabled: Story = {
   args: {
-    label: "Disabled button",
+    children: "Disabled button",
     disabled: true,
   },
 };
 
 export const Big: Story = {
   args: {
-    label: "Big button",
+    children: "Big button",
     size: "big",
   },
 };
 
 export const Unstyled: Story = {
   args: {
-    label: "Unstyled button",
+    children: "Unstyled button",
     unstyled: true,
   },
 };
