@@ -1,0 +1,109 @@
+import { Meta, Title, Canvas } from "@storybook/addon-docs/blocks";
+import * as PersonnelFeedbackFormStories from "./Form.stories";
+
+<Meta of={PersonnelFeedbackFormStories} />
+
+<Title />
+
+## Overview
+
+This template is a modernized, accessible redesign of the Kentucky Personnel Cabinet's existing public feedback form. The original form was built on a legacy SharePoint WebForms implementation with no input validation, inconsistent visual design, and no mobile responsiveness.
+
+This redesign addresses each of those problems using this accessible component library.
+
+## Before and After
+
+<table>
+  <thead>
+    <tr>
+      <th>Problem</th>
+      <th>Original Form</th>
+      <th>This Design</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Input validation</td>
+      <td>None — phone field accepts letters, email field accepts anything</td>
+      <td>
+        Native HTML5 validation via correct <code>type</code> attributes
+      </td>
+    </tr>
+    <tr>
+      <td>Error states</td>
+      <td>No visible error messaging</td>
+      <td>Error states with visible text and ARIA attributes</td>
+    </tr>
+    <tr>
+      <td>Mobile responsiveness</td>
+      <td>Content pushed off screen at narrow widths</td>
+      <td>Fully responsive using USWDS grid system</td>
+    </tr>
+    <tr>
+      <td>Visual consistency</td>
+      <td>Inconsistent with other Personnel Cabinet pages</td>
+      <td>Built on unified component library and design tokens</td>
+    </tr>
+    <tr>
+      <td>Field grouping</td>
+      <td>Flat list of fields with no semantic structure</td>
+      <td>
+        Grouped with <code>&lt;fieldset&gt;</code> and{" "}
+        <code>&lt;legend&gt;</code> elements
+      </td>
+    </tr>
+    <tr>
+      <td>Name fields</td>
+      <td>Single combined first and last name field</td>
+      <td>
+        Separate first and last name fields for better usability and autofill
+        support
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Accessibility
+
+This template satisfies the following WCAG 2.1 AA criteria required under the ADA Title II rule effective April 2027:
+
+- **1.3.1 Info and Relationships** — Related fields are grouped using native `<fieldset>` and `<legend>` elements. Screen readers announce the group name before each field within it.
+- **1.3.4 Orientation** — The form is fully usable in both portrait and landscape orientations
+- **1.4.3 Contrast (Minimum)** — All text and interactive elements meet a 4.5:1 contrast ratio
+- **1.4.4 Resize Text** — The form remains usable when text is scaled up to 200%
+- **1.4.10 Reflow** — The form reflows correctly at narrow viewport widths without horizontal scrolling
+- **2.1.1 Keyboard** — All fields, the state select, and both buttons are fully operable via keyboard
+- **2.4.7 Focus Visible** — All interactive elements display a visible focus indicator
+- **3.2.2 On Input** — No unexpected context changes occur when the user interacts with any field
+- **3.3.1 Error Identification** — Required fields are marked visually and programmatically
+- **3.3.2 Labels or Instructions** — Every field has a persistent visible label. Required fields are indicated with a required marker.
+- **4.1.2 Name, Role, Value** — All form controls use native HTML elements with correct roles and states communicated to screen readers
+
+## Design Decisions
+
+**Separate first and last name fields** — the original form combined these into a single field. Separate fields improve autofill support, data integrity, and screen reader announcements.
+
+**Fieldset grouping** — fields are grouped into Name, Company, Contact, and Comments sections using `<fieldset>` and `<legend>`. This provides context to screen reader users who may be navigating field by field.
+
+**Correct input types** — email uses `type="email"`, phone uses `type="tel"`. This triggers appropriate mobile keyboards and enables browser-level validation.
+
+**State as a Select** — the original form used a free text field for state. A select ensures valid state values and eliminates data integrity issues.
+
+**Success state** — on submission the form is replaced with a success alert. This provides clear confirmation without a page reload and is announced automatically to screen readers via `role="alert"`.
+
+**Cancel resets form** — the cancel button resets all fields to their initial empty state rather than navigating away, which is appropriate for an internal tool context.
+
+**Color contrast suppression note** — the USWDS Select component triggers a known false positive in axe-core's color contrast checker. This rule is suppressed for the select element only. The USWDS Select meets WCAG 1.4.3 contrast requirements.
+
+## Recommended Improvements
+
+The following improvements are recommended for a production implementation of this form:
+
+- **Reduce required fields** — a feedback form rarely needs a full mailing address. Auditing which fields are actually used and removing unnecessary ones reduces friction significantly.
+- **Add inline error messages** — currently required field validation relies on native browser behavior. A production implementation should add explicit inline error messages wired to each field via `aria-describedby`.
+- **Add a validation summary alert** — when submission is attempted with errors, a validation alert at the top of the form listing all errors improves the experience for screen reader users.
+- **Consider a multi-step pattern** — if all fields are genuinely required, a stepped form using the USWDS Step Indicator component would reduce cognitive load.
+
+## Template Preview
+
+<Canvas of={PersonnelFeedbackFormStories.PersonnelFeedback} />

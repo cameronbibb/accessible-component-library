@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Form } from "./Form";
 import { PersonnelFeedbackForm } from "./PersonnelFeedbackForm";
+import docs from "./PersonnelFeedbackForm.docs.mdx";
 
 const meta: Meta<typeof Form> = {
   title: "Templates/Personnel Feedback Form",
@@ -18,22 +19,9 @@ const meta: Meta<typeof Form> = {
       },
     },
     docs: {
-      description: {
-        component: `
-## Accessibility
-
-This label component is built on the USWDS label and satisfies the following WCAG 2.1 AA criteria:
-
-**insert criteria here
-
-## Usage guidelines
-
-**list usage guidelines here
-        `,
-      },
+      page: docs,
     },
   },
-  tags: ["autodocs"],
   argTypes: {
     onSubmit: {
       description: "Submission handler",

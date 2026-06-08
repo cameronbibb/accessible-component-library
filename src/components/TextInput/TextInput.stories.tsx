@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { TextInput } from "./TextInput";
 import { type TextInputProps } from "@trussworks/react-uswds";
 import { Label } from "../Label/Label";
+import docs from "./TextInput.docs.mdx";
 
 type TextInputStoryArgs = TextInputProps & { label?: string };
 
@@ -16,28 +17,9 @@ const meta: Meta<TextInputStoryArgs> = {
   ),
   parameters: {
     docs: {
-      description: {
-        component: `
-## Accessibility
-
-This input box is built on the USWDS input and satisfies the follow WCAG 2.1 AA criteria:
-- Criteria 1.
-- Criteria 2.
-- Etc.
-
-## Usage guidelines
-
-- Use the **default** variant for the primary action on a page
-- Use **secondary** for secondary actions that appear alongside a primary action
-- Use **outline** for actions that occur on the current page without navigating away
-- Use **accent-cool** or **accent-warm** sparingly for emphasis
-- Keep button labels short and start with a verb — "Save changes", "Submit form", "Cancel"
-- Avoid placing more than one primary button on a page
-        `,
-      },
+      page: docs,
     },
   },
-  tags: ["autodocs"],
   argTypes: {
     label: {
       control: "text",

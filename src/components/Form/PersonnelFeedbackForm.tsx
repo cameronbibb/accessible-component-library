@@ -126,7 +126,12 @@ export const PersonnelFeedbackForm = () => {
             <div className="grid-row grid-gap">
               <div className="tablet:grid-col-8">
                 <Label htmlFor="state">State</Label>
-                <Select id="state" name="state" value={form.state} onChange={handleChange}>
+                <Select
+                  id="state"
+                  name="state"
+                  value={form.state}
+                  onChange={handleChange}
+                >
                   <option value="">Select a state</option>
                   {states.map((state) => (
                     <option key={state.abbreviation} value={state.abbreviation}>
